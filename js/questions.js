@@ -97,7 +97,7 @@
                      return res.json();
                  }).then((data) => {
                      console.log(data)
-                     // window.location.href='answers.html'
+                     window.location.href='questions.html'
                  })
 
              }

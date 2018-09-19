@@ -1,3 +1,7 @@
+/* event listeners */
+document.getElementById("signup-form").addEventListener("submit", registeruser);
+//Global vars
+
 function registeruser(e) {
   e.preventDefault();
   let username = document.getElementById("username").value;

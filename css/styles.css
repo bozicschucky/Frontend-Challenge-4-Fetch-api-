@@ -1,0 +1,200 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255,255,255);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-bar  a{
+    color: antiquewhite;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.nav-bar{
+    display: flex;
+    color: antiquewhite;
+    margin-top:0;
+    /* background-color: rgb(4, 138, 138); */
+    background-color: #24292e;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.nav-bar > li {
+    list-style: none;
+    padding: 25px;
+}
+
+.signout {
+    /* justify-content: flex-end; */
+    justify-content: flex-end;
+    /* align-self: flex-end; */
+    /* padding-left: 55%; */
+}
+
+main{
+    display: flex;
+    padding-bottom: 20px;
+}
+
+/* Forms using flexbox */
+.main-form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: flex-end;
+    margin: auto;
+}
+
+/*Input forms styles*/
+label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+textarea,input{
+    size: 30px;
+    padding: 20px;
+    background-color: rgb(255,255,255);
+    background-size: auto;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(203,219,219);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(203,219,219);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(203,219,219);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: rgb(203,219,219);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.answer_input{
+    margin-top: 3%;
+    padding-top: 50px;
+    width: 80%;
+}
+
+
+/* Buttons for the website */
+.btn{
+    margin: 20px;
+    margin-left:0; 
+    width: 42%;
+    color: white;
+    padding: 18px;
+    background: rgb(12, 100, 26);
+    border: #000;
+}
+
+.btn:hover{
+    background: #000;
+    outline-color: beige;
+}
+
+.btn-delete{
+    background:grey;
+}
+
+.btn-delete:hover{
+    background: red;
+    outline-color: beige;
+}
+.upvote{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #4CAF50;
+    color: green;
+}
+
+.upvote:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.downvote{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #2196F3;
+    color: dodgerblue
+}
+
+.downvote:hover{
+    border-color: #ff9800;
+    color: orange;
+}
+
+/* user profile */
+.user{
+    width: 80%;
+    margin-left:30%;
+    display: flex;
+}
+
+.user_question_header{
+    font-size: 20px;
+}
+.recent_question{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.user_holder{
+    display: flex;
+}
+
+.page_footer{
+    background-color: #24292e;
+    color: antiquewhite;
+    padding: 0.5rem;
+}
+
+.page_footer_login{
+    background-color: #24292e;
+    margin-top: 220px;
+    padding: 0.6rem;
+}
+
+.accept{
+    margin-top: 12px;
+}
+
+/*images on the profile page*/
+.image{
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+/*Flash messages*/
+.danger{
+    display: flex;
+    padding: 15px;
+    /*margin-bottom: 6px;*/
+    flex-direction: column;
+    width: 40%;
+    justify-content: flex-end;
+    margin: auto;
+    background: yellow;
+}

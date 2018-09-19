@@ -1,5 +1,5 @@
     let id = localStorage.getItem('id')
-    var url = `http://localhost:5000/api/v2/questions/${id}`;
+    var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
     token = localStorage.getItem('token')
 
 

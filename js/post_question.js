@@ -35,7 +35,7 @@
                 'title': title,
                 'body': body
             };
-            var url = "http://localhost:5000/api/v2/questions";
+            var url = "https://stackoverflowlite2.herokuapp.com/api/v2/questions";
             fetch(url, {
                 method: "POST",
                 body: JSON.stringify(data),

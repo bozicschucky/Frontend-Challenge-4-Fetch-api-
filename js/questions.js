@@ -83,7 +83,7 @@
                  window.location.href='answers.html'   
                  
              } else if (e.target && e.target.nodeName == 'INPUT') {
-                 id = id = parseInt(e.target.attributes.getNamedItem('id').value);
+                 id = parseInt(e.target.attributes.getNamedItem('id').value);
                  var url = `http://localhost:5000/api/v2/questions/${id}`;
 
                  fetch(url, {

@@ -15,8 +15,10 @@
             return res.json();
         })
         .then((response) => {
+
             question = response.question
             answers = question['answers']
+            console.log(answers)
             function answer(answers) {
                 answers_array = []
                 id_array = []

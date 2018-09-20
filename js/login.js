@@ -16,7 +16,7 @@
             const currentFlash = document.querySelector("."+uiClass);
             if (currentFlash){
                 currentFlash.remove()
-                window.location.href='questions.html'
+                window.location.href='platform_questions.html'
             }else {
                 console.log('i am not working')
             }

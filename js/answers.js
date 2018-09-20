@@ -1,4 +1,4 @@
-    let id = localStorage.getItem('id')
+    let id = parseInt(localStorage.getItem('id'))
     var url = `http://localhost:5000/api/v2/questions/${id}`;
     token = localStorage.getItem('token')
 

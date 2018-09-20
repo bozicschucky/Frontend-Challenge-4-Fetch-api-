@@ -31,7 +31,7 @@ let token = localStorage.getItem('token')
                         `
             let recent_questions = `
                                 <div class="">
-                                    <h2 class="user_question_header">Recent  (${num_of_questions}) Questins by X</h2>
+                                    <h2 class="user_question_header">Recent  (${num_of_questions}) Questions by ${username}</h2>
                                 </div>
                                     `
             recent.forEach( function(element, index) {

@@ -40,26 +40,27 @@ let token = localStorage.getItem('token')
             });
 
             profile.innerHTML = user_html
-            questions.innerHTML = recent_questions
+            // questions.innerHTML = recent_questions
+            most_popular.innerHTML = recent_questions
 
      })
 
 
 
-let top_questions = ` 
-                <h2>Top (10) questions asked by User X   with most answers</h2>
-                    <p>How to code flask (200 Answers)</p>
-                    <p>How to do django development using TDD(100 Answers)</p>
-                    <p>How to write code without writing code(50) Answers</p>
-                    <p>How to be a python core developer(45) Answers</p>
-                    <p>Top tools used by pro developers(40) Answers</p>
-                    <p>Modern software development workflows(35) Answers</p>
-                    <p>What are the best software practises(20) Answers</p>
-                    <p>The best code editor vim or emacs(19) Answers</p>
-                    <p>How to write code without writing code(17) Answers</p>
-                    <p>How to code react apps (16) Answers</p>
-                    <p>Should i use react or vue what's the best(15) Answers</p>
-                </h2>
-            `
+// let top_questions = ` 
+//                 <h2>Top (10) questions asked by User X   with most answers</h2>
+//                     <p>How to code flask (200 Answers)</p>
+//                     <p>How to do django development using TDD(100 Answers)</p>
+//                     <p>How to write code without writing code(50) Answers</p>
+//                     <p>How to be a python core developer(45) Answers</p>
+//                     <p>Top tools used by pro developers(40) Answers</p>
+//                     <p>Modern software development workflows(35) Answers</p>
+//                     <p>What are the best software practises(20) Answers</p>
+//                     <p>The best code editor vim or emacs(19) Answers</p>
+//                     <p>How to write code without writing code(17) Answers</p>
+//                     <p>How to code react apps (16) Answers</p>
+//                     <p>Should i use react or vue what's the best(15) Answers</p>
+//                 </h2>
+//             `
 
-most_popular.innerHTML = top_questions
+// most_popular.innerHTML = top_questions

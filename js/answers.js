@@ -1,5 +1,5 @@
     let id = parseInt(localStorage.getItem('id'))
-    var url = `http://localhost:5000/api/v2/questions/${id}`;
+    let url = `http://localhost:5000/api/v2/questions/${id}`;
     token = localStorage.getItem('token')
 
 
@@ -18,9 +18,9 @@
 
             question = response.question
             answers = question['answers']
-            console.log(answers[0]['status'])
+            // console.log(answers[0]['status'])
 
-            console.log(answers)
+            // console.log(answers)
 
             function answer(answers) {
                 answers_array = []
@@ -73,7 +73,8 @@
             btn.addEventListener('click', (e) => {
                 e.preventDefault()
                 let answer = document.getElementById('name').value
-                url = url + '/answers'
+                let id = parseInt(localStorage.getItem('id'))
+                let url = `http://localhost:5000/api/v2/questions/${id}`+ '/answers'
                 data = {
                     'body': answer,
                     'accept_status': false

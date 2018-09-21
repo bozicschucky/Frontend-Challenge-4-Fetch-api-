@@ -46,6 +46,7 @@
                 .then(response => {
                     token = response.access_token
                     localStorage.setItem('token', token)
+                    localStorage.setItem('current_user',username)
                     flash(response.message,'danger')
                 })
                 .catch(error => console.error("Error:", error));

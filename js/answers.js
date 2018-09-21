@@ -175,8 +175,12 @@
                         for (let i = 0; i<btnAccept.length;i++){
                             btnAccept[i].disabled = true
                         }
+                        btnAns = document.querySelectorAll('.btn-ans')
+                        for (let i = 0; i<btnAns.length;i++){
+                            btnAns[i].disabled = true
+                        }
 
-                        // // Get the button that opens the modal
+                        // Get the button that opens the modal
                         // var btn = document.getElementById("myBtn");
                         // console.log('nope')
                         var modal = document.getElementById('myModal');

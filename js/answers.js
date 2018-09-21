@@ -175,8 +175,35 @@
                         for (let i = 0; i<btnAccept.length;i++){
                             btnAccept[i].disabled = true
                         }
-                        console.log('nope')
 
+                        // // Get the button that opens the modal
+                        // var btn = document.getElementById("myBtn");
+                        // console.log('nope')
+                        var modal = document.getElementById('myModal');
+                        console.log(modal)
+                        //get the span element that closes the modal
+                        var span = document.getElementsByClassName("close")[0];
+                        modal.style.display = 'block'
+
+                        //close model when the span is clicked
+                        span.onclick = (e) =>{
+                            modal.style.display = 'none'
+                        }
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+
+                    // handle the event for answer submission
+                    ansBtn = document.getElementById('answerupdate')
+                    ansBtn.addEventListener('click',() => {
+                        console.log('submited some random shit')
+                        let body = document.getElementById('answerinput').value
+                        console.log(body)
+                    })
                     }
                 })
                 

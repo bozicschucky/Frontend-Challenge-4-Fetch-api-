@@ -84,7 +84,7 @@
                     <div class='answers'>
                         <form id="answerform">
                             <label for="name"></label>
-                            <input type="text" name="name" placeholder = "answer body" id="name" class="answer_input"> <br>
+                            <textarea type="text" name="name" placeholder = "answer body" id="name" class="answer_input"></textarea> <br>
                             <button type="submit" class="btn" id='answersbtn'> post</button>
                         </form>
                     </div>
@@ -103,7 +103,6 @@
 
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
                                 <div>
-                                <input class='btn btn-ans' id=${id_array[i]} type='submit' value='accept'>
                                 <input class='btn' id=${id_array[i]} type='submit' value='update'>
                                 </div>
                                         `
@@ -175,17 +174,13 @@
                         for (let i = 0; i<btnAccept.length;i++){
                             btnAccept[i].disabled = true
                         }
-                        btnAns = document.querySelectorAll('.btn-ans')
-                        for (let i = 0; i<btnAns.length;i++){
-                            btnAns[i].disabled = true
-                        }
-
                         // Get the button that opens the modal
                         // var btn = document.getElementById("myBtn");
                         // console.log('nope')
+                        id = parseInt(e.target.attributes.getNamedItem('id').value);
+                        url = `http://localhost:5000/api/v2/questions/${id}/answers/1`
                         var modal = document.getElementById('myModal');
-                        console.log(modal)
-                        //get the span element that closes the modal
+                        // get the span element that closes the modal
                         var span = document.getElementsByClassName("close")[0];
                         modal.style.display = 'block'
 
@@ -206,7 +201,27 @@
                     ansBtn.addEventListener('click',() => {
                         console.log('submited some random shit')
                         let body = document.getElementById('answerinput').value
-                        console.log(body)
+
+                        data = {
+                            "body": body,
+                            'accept_status': false
+                        }
+
+                        fetch(url, {
+                                method: 'PUT',
+                                body: JSON.stringify(data),
+                                headers: {
+                                    Accept: 'application/json',
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}`
+                                }
+                            }).then(res => res.json())
+                            .then((response) => {
+                                // window.location.href = 'answers.html'
+                                console.log(response)
+                                window.location.href = 'answers.html'
+                            })
+                        
                     })
                     }
                 })

@@ -101,16 +101,22 @@
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
                                 <div>
                                 <input class='btn btn-accept' id=${id_array[i]} type='submit' value='accepted' style='background-color:black;color:white;'>
-                                <input class='btn' id=${id_array[i]} type='submit' value='update'>
                                 </div>
                                         `
+                            if( currentUser == author){
+                                    html += ` <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`
+                                 
+                            }
                         } else {
 
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
                                 <div>
-                                <input class='btn' id=${id_array[i]} type='submit' value='update'>
                                 </div>
                                         `
+                    if( currentUser == author){
+                                html += ` <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`
+                    }
+
                         }
                     }
             }

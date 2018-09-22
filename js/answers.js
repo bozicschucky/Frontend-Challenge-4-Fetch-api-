@@ -74,6 +74,11 @@
                     }
                     } 
             else {
+                author = answers[0]['author']
+                if( currentUser == author){
+                    console.log('yes')
+                }
+                // if( current_user)
                  console.log('i am not the one')
                                     html = `
                   <h2> Question details  for question ${id}</h2>
@@ -143,8 +148,9 @@
                 acceptbtn.addEventListener('click', (e) => {
                     e.preventDefault()
                     if (e.target && e.target.nodeName == 'INPUT') {
-                        id = parseInt(e.target.attributes.getNamedItem('id').value);
-                        url = `http://localhost:5000/api/v2/questions/${id}/answers/1`
+                        question_id = parseInt(localStorage.getItem('id'))
+                        ans_id = parseInt(e.target.attributes.getNamedItem('id').value);
+                        url = `http://localhost:5000/api/v2/questions/${question_id}/answers/${ans_id}`
                         data = {
                             "body": "You should watch alot of motivational videos and listen to reggae music",
                             'accept_status': true
@@ -177,8 +183,9 @@
                         // Get the button that opens the modal
                         // var btn = document.getElementById("myBtn");
                         // console.log('nope')
-                        id = parseInt(e.target.attributes.getNamedItem('id').value);
-                        url = `http://localhost:5000/api/v2/questions/${id}/answers/1`
+                        question_id = parseInt(localStorage.getItem('id'))
+                        ans_id = parseInt(e.target.attributes.getNamedItem('id').value);
+                        url = `http://localhost:5000/api/v2/questions/${question_id}/answers/${ans_id}`
                         var modal = document.getElementById('myModal');
                         // get the span element that closes the modal
                         var span = document.getElementsByClassName("close")[0];
@@ -217,7 +224,6 @@
                                 }
                             }).then(res => res.json())
                             .then((response) => {
-                                // window.location.href = 'answers.html'
                                 console.log(response)
                                 window.location.href = 'answers.html'
                             })

@@ -59,22 +59,21 @@
                     for (let i = 0; i < ans.length; i++) {
                         if (answers[i]['status'] == true) {
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
-                                <div>
                                 <input class='btn' id=${id_array[i]} type='submit' value='accepted' style='background-color:black;color:white;'> <br>
-                                </div>
+
                                         `
                         } else {
 
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
-                                <div>
                                 <input class='btn btn-ans' id=${id_array[i]} type='submit' value='accept'> <br>
-                                </div>
                                         `
                         }
                     }
                     } 
             else {
                 author = answers[0]['author']
+                console.log(currentUser)
+                console.log(author)
                 if( currentUser == author){
                     console.log('yes')
                 }
@@ -99,9 +98,8 @@
                     for (let i = 0; i < ans.length; i++) {
                         if (answers[i]['status'] == true) {
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
-                                <div>
                                 <input class='btn btn-accept' id=${id_array[i]} type='submit' value='accepted' style='background-color:black;color:white;'>
-                                </div>
+
                                         `
                             if( currentUser == author){
                                     html += ` <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`
@@ -110,8 +108,6 @@
                         } else {
 
                             html += `${ans[i]} by<b> ${answers[i]['author']}</b><br>
-                                <div>
-                                </div>
                                         `
                     if( currentUser == author){
                                 html += ` <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`

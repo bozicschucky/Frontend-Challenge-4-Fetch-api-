@@ -32,7 +32,7 @@ function loginuser(e) {
     username: username,
     password: password
   };
-  var url = "http://localhost:5000/api/v2/auth/login";
+  var url = "https://stackoverflowlite2.herokuapp.com/api/v2/auth/login";
   fetch(url, {
     method: "POST",
     body: JSON.stringify(data),

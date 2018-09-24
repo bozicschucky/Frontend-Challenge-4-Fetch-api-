@@ -1,5 +1,5 @@
 let id = parseInt(localStorage.getItem("id"));
-let url = `http://localhost:5000/api/v2/questions/${id}`;
+let url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
 const token = localStorage.getItem("token");
 const currentUser = localStorage.getItem("current_user");
 // console.log(username)
@@ -127,7 +127,7 @@ fetch(url, {
       e.preventDefault();
       let answer = document.getElementById("name").value;
       let id = parseInt(localStorage.getItem("id"));
-      let url = `http://localhost:5000/api/v2/questions/${id}` + "/answers";
+      let url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}` + "/answers";
       data = {
         body: answer,
         accept_status: false
@@ -156,7 +156,7 @@ fetch(url, {
         if (e.target && e.target.nodeName == "INPUT") {
           question_id = parseInt(localStorage.getItem("id"));
           ans_id = parseInt(e.target.attributes.getNamedItem("id").value);
-          url = `http://localhost:5000/api/v2/questions/${question_id}/answers/${ans_id}`;
+          url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${question_id}/answers/${ans_id}`;
           data = {
             body:
               "You should watch alot of motivational videos and listen to reggae music",
@@ -193,7 +193,7 @@ fetch(url, {
           // console.log('nope')
           question_id = parseInt(localStorage.getItem("id"));
           ans_id = parseInt(e.target.attributes.getNamedItem("id").value);
-          url = `http://localhost:5000/api/v2/questions/${question_id}/answers/${ans_id}`;
+          url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${question_id}/answers/${ans_id}`;
           var modal = document.getElementById("myModal");
           // get the span element that closes the modal
           var span = document.getElementsByClassName("close")[0];

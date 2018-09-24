@@ -1,7 +1,7 @@
 let profile = document.querySelector(".user_details");
 let questions = document.querySelector(".recent_question");
 let most_popular = document.querySelector(".user_most_answers");
-let url = "http://localhost:5000/api/v2/profile";
+let url = "https://stackoverflowlite2.herokuapp.com/api/v2/profile";
 let token = localStorage.getItem("token");
 
 fetch(url, {

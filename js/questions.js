@@ -1,4 +1,4 @@
-var url = "http://localhost:5000/api/v2/questions";
+var url = "https://stackoverflowlite2.herokuapp.com/api/v2/questions";
 token = localStorage.getItem("token");
 
 function flash(message, uiClass) {
@@ -62,8 +62,8 @@ fetch(url, {
                                                   ids[i]
                                                 } type='submit' value='Delete'> <br>
                                             `;
-      urls.push(`http://localhost:5000/api/v2/questions/${ids[i]}`);
-      url = `http://localhost:5000/api/v2/questions/${ids[i]}`;
+      urls.push(`https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`);
+      url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`;
     }
     console.log(urls);
 
@@ -75,12 +75,12 @@ fetch(url, {
         // console.log(e.target)
         id = parseInt(e.target.attributes.getNamedItem("id").value);
         qnid = e.target.attributes.getNamedItem("id").value;
-        var url = `http://localhost:5000/api/v2/questions/${id}`;
+        var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
         localStorage.setItem("id", qnid);
         window.location.href = "answers.html";
       } else if (e.target && e.target.nodeName == "INPUT") {
         id = parseInt(e.target.attributes.getNamedItem("id").value);
-        var url = `http://localhost:5000/api/v2/questions/${id}`;
+        var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
 
         fetch(url, {
           method: "DELETE",

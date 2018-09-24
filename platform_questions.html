@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Answers</title>
+    <title>Platform Questions</title>
 </head>
 
 <body>
@@ -14,28 +14,20 @@
         <ul class="nav-bar">
             <li><a href="platform_questions.html">MiniOverFlow</a></li>
             <li><a href="profile.html">Profile</a></li>
-            <li><a href="post.html">Post Question</a></li>
+            <li><a href="post.html">Ask</a></li>
+            <li><a href="questions.html">My qtns</a></li>
             <li id="" class="signout"><a href="login.html">Signout</a></li>
         </ul>
     </nav>
-    <main>
+    <main class="main" id='main_field'>
         <form action="" class="main-form">
             <div class="question" id="questions">
             </div>
         </form>
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Update the answer..</p>
-                <input type="text" id="answerinput" name="model" placeholder="answer body">
-                <input type="button" id="answerupdate" value="submit" class="btn btnans">
-            </div>
+        <div class="answers" id="user_answers">
         </div>
     </main>
-    <script src="js/answers.js"></script>
+    <script src="js/platform.js"></script>
 </body>
 
 </html>

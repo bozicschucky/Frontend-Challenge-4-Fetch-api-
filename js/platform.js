@@ -1,7 +1,6 @@
 var url = "https://stackoverflowlite2.herokuapp.com/api/v2/questions";
 token = localStorage.getItem("token");
 
-
 function flash(message, uiClass) {
   // add text
   range = document.createRange();
@@ -36,32 +35,33 @@ fetch(url, {
   })
   .then(response => {
     flash("all questions", "danger");
-    questions = response.all_questions;
+    console.log(response);
+    questions = response.platform_questions;
 
     let ids = [];
     let title = [];
     let body = [];
+    let authors = [];
 
     function get_data(questions) {
       for (let i = 0; i < questions.length; i++) {
         title.push(questions[i]["title"]);
         body.push(questions[i]["body"]);
         ids.push(questions[i]["id"]);
+        authors.push(questions[i]["author"]);
       }
     }
     get_data(questions);
-    console.log(ids);
-    console.log(title);
-    console.log(body);
+    console.log(authors);
 
     urls = [];
-    let html = "";
+    let html = "<h2> Questions asked by other users </h2>";
     let answers_html = "";
     for (let i = 0; i < ids.length; i++) {
-      html += ` <a href="${url}" id=${ids[i]}>${title[i]}<a/> <br> 
-                                                <input class='btn' id=${
-                                                  ids[i]
-                                                } type='submit' value='Delete'> <br>
+      html += ` 
+              <a href="${url}" id=${ids[i]}>${title[i]}<a/> by <b>${
+        authors[i]
+      }</b> <br> 
                                             `;
       urls.push(`https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`);
       url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`;
@@ -75,33 +75,12 @@ fetch(url, {
       if (e.target && e.target.nodeName == "A") {
         // console.log(e.target)
         id = parseInt(e.target.attributes.getNamedItem("id").value);
-        qnid = e.target.attributes.getNamedItem("id").value;
+        // qnid = e.target.attributes.getNamedItem('id').value;
         var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
-        localStorage.setItem("id", qnid);
+        localStorage.setItem("id", id);
         window.location.href = "answers.html";
-      } else if (e.target && e.target.nodeName == "INPUT") {
-        id = parseInt(e.target.attributes.getNamedItem("id").value);
-        var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
-
-        fetch(url, {
-          method: "DELETE",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-          }
-        })
-          .then(res => {
-            return res.json();
-          })
-          .then(data => {
-            console.log(data);
-            window.location.href = "questions.html";
-          });
       }
     };
 
-
     document.getElementById("questions").innerHTML = html;
   });
-

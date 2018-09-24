@@ -17,7 +17,7 @@ function flash(message, uiClass) {
     const currentFlash = document.querySelector("." + uiClass);
     if (currentFlash) {
       currentFlash.remove();
-      window.location.href = "login.html";
+      window.location.href = "home.html";
     } else {
       console.log("i am not working");
     }

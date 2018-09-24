@@ -16,11 +16,13 @@ fetch(url, {
     return res.json();
   })
   .then(response => {
+    console.log(response)
     question = response.question;
     answers = question["answers"];
     // console.log(answers[0]['status'])
 
-    // console.log(answers)
+    console.log(answers)
+    console.log(response)
 
     function answer(answers) {
       answers_array = [];

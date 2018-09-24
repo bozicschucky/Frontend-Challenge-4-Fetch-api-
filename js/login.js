@@ -43,10 +43,11 @@ function loginuser(e) {
   })
     .then(res => res.json())
     .then(response => {
+
       token = response.access_token;
       localStorage.setItem("token", token);
       localStorage.setItem("current_user", username);
-      flash(response.message, "danger");
+      flash(response.message, "success");
     })
     .catch(error => console.error("Error:", error));
 }

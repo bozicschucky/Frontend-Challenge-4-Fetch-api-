@@ -71,12 +71,12 @@ fetch(url, {
         }
       }
     } else {
-      author = answers[0]["author"];
-      console.log(currentUser);
-      console.log(author);
-      if (currentUser == author) {
-        console.log("yes");
-      }
+      // author = answers[0]["author"];
+      // console.log(currentUser);
+      // console.log(author);
+      // if (currentUser == author) {
+      //   console.log("yes");
+      // }
       // if( current_user)
       console.log("i am not the one");
       html = `
@@ -101,21 +101,22 @@ fetch(url, {
                                 <input class='btn btn-accept' id=${
                                   id_array[i]
                                 } type='submit' value='accepted' style='background-color:black;color:white;'>
+                                 <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`;
 
-                                        `;
-          if (currentUser == author) {
-            html += ` <input class='btn' id=${
-              id_array[i]
-            } type='submit' value='update'> <br>`;
-          }
+                                        ;
+          // if (currentUser == author) {
+          //   html += ` <input class='btn' id=${
+          //     id_array[i]
+          //   } type='submit' value='update'> <br>`;
+          // }
         } else {
           html += `${ans[i]} by<b> ${answers[i]["author"]}</b><br>
-                                        `;
-          if (currentUser == author) {
-            html += ` <input class='btn' id=${
-              id_array[i]
-            } type='submit' value='update'> <br>`;
-          }
+                    <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`;
+          // if (currentUser == author) {
+          //   html += ` <input class='btn' id=${
+          //     id_array[i]
+          //   } type='submit' value='update'> <br>`;
+          // }
         }
       }
     }

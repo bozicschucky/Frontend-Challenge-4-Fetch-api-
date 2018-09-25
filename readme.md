@@ -3,24 +3,15 @@
 StackOverFlow-Lite App is an application that provides users with the ability to ask questions and get anwsers to respective questions posted.
 # Getting Started
 
-You can clone the project
-(link)
+You can clone the project and test it locally by cloning the link below  
+The link is [StackOverFlow-Lite](https://github.com/bozicschucky/Frontend-Challenge-4-Fetch-api-)
 
 # Project Link
- Visit [StackOverFlow-Lite](https://bozicschucky.github.io/AndelaWeekOne/signup.html)
+ Visit the hosted verion [StackOverFlow-Lite](https://stackoverflowlite1ui.herokuapp.com/home.html)
 
-
-## User urls
-
-   1. [Login Form](https://bozicschucky.github.io/AndelaWeekOne/login.html)
-   2. [Sign up Form](https://bozicschucky.github.io/AndelaWeekOne/signup.html)
-   3. [Post Question ](https://bozicschucky.github.io/AndelaWeekOne/post.html)
-   4. [User Profile](https://bozicschucky.github.io/AndelaWeekOne/profile.html)
-   5. [Post Answer ](https://bozicschucky.github.io/AndelaWeekOne/post_answer.html)
-   6. [Accept Answer ](https://bozicschucky.github.io/AndelaWeekOne/accept_answer.html)
-   7. [Delete Answer ](https://bozicschucky.github.io/AndelaWeekOne/delete.html)
-   8. [User Profile ](https://bozicschucky.github.io/AndelaWeekOne/profile.html)
-
+# Usage
+ - User first has to create an account.
+ - User can then login and have access to all the other parts of the app.
 
 
 # Features
@@ -32,11 +23,16 @@ You can clone the project
  - Users can accept an answer out of all the answers to his/her question as the preferred answer.
 
 
+# How to contribute
+- Just clone the project and set a pull request after making changes which you wanna add to the project.
+
+
 
 
 # Developed using
  - HTML5
  - CSS3
+ - javascipt(Using the fetch api)
 
 
 # Authors

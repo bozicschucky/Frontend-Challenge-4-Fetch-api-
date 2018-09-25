@@ -55,7 +55,7 @@ fetch(url, {
     console.log(authors);
 
     urls = [];
-    let html = "<h2> Questions asked by other users </h2>";
+    let html = "<h2>Recent Questions </h2>";
     let answers_html = "";
     for (let i = 0; i < ids.length; i++) {
       html += ` 

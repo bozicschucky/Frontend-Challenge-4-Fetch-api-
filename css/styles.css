@@ -229,9 +229,9 @@ textarea,input{
 
 /*Media queries and responsive design*/
 @media only screen and (max-width: 600px) {
-    body {
+/*    body {
         background-color: lightblue;
-         }
+         }*/
 
         .nav-bar{
         display: flex;

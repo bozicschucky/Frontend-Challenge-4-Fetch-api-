@@ -16,7 +16,6 @@ fetch(url, {
     return res.json();
   })
   .then(response => {
-    console.log(response);
     username = response["username"];
     num_of_questions = response["number_of_questions"];
     recent = response["recent"];
@@ -33,12 +32,10 @@ fetch(url, {
                                 </div>
                                     `;
     recent.forEach(function(element, index) {
-      // console.log(element)
       recent_questions += `<p> ${element} </p>`;
     });
 
     profile.innerHTML = user_html;
-    // questions.innerHTML = recent_questions
     most_popular.innerHTML = recent_questions;
   });
 

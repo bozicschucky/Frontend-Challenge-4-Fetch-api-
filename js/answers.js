@@ -2,7 +2,6 @@ let id = parseInt(localStorage.getItem("id"));
 let url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
 const token = localStorage.getItem("token");
 const currentUser = localStorage.getItem("current_user");
-// console.log(username)
 
 fetch(url, {
   method: "GET",
@@ -16,13 +15,9 @@ fetch(url, {
     return res.json();
   })
   .then(response => {
-    console.log(response)
+
     question = response.question;
     answers = question["answers"];
-    // console.log(answers[0]['status'])
-
-    console.log(answers)
-    console.log(response)
 
     function answer(answers) {
       answers_array = [];
@@ -33,13 +28,8 @@ fetch(url, {
       }
       return answers_array;
     }
-    // answer(answers)
-    console.log(answers);
     ans = answer(answers);
-    // console.log(id_array)
-    // console.log(ans)
     if (currentUser == question["author"]) {
-      console.log("yap i am the dude");
       html = `
                   <h2> Question details  for question ${id}</h2>
                     <div>
@@ -73,14 +63,6 @@ fetch(url, {
         }
       }
     } else {
-      // author = answers[0]["author"];
-      // console.log(currentUser);
-      // console.log(author);
-      // if (currentUser == author) {
-      //   console.log("yes");
-      // }
-      // if( current_user)
-      console.log("i am not the one");
       html = `
                   <h2> Question details  for question ${id}</h2>
                     <div>
@@ -106,19 +88,10 @@ fetch(url, {
                                  <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`;
 
                                         ;
-          // if (currentUser == author) {
-          //   html += ` <input class='btn' id=${
-          //     id_array[i]
-          //   } type='submit' value='update'> <br>`;
-          // }
+
         } else {
           html += `${ans[i]} by<b> ${answers[i]["author"]}</b><br>
                     <input class='btn' id=${id_array[i]} type='submit' value='update'> <br>`;
-          // if (currentUser == author) {
-          //   html += ` <input class='btn' id=${
-          //     id_array[i]
-          //   } type='submit' value='update'> <br>`;
-          // }
         }
       }
     }
@@ -149,9 +122,7 @@ fetch(url, {
         });
     });
 
-    // acceptbtn = document.getElementById('acceptbtn')
     if (currentUser == question["author"]) {
-      console.log("yap");
       acceptbtn = document.querySelector(".question");
       acceptbtn.addEventListener("click", e => {
         e.preventDefault();
@@ -164,7 +135,6 @@ fetch(url, {
               "You should watch alot of motivational videos and listen to reggae music",
             accept_status: true
           };
-          console.log(url);
           fetch(url, {
             method: "PUT",
             body: JSON.stringify(data),
@@ -185,19 +155,15 @@ fetch(url, {
       acceptbtn.addEventListener("click", e => {
         e.preventDefault();
         if (e.target && e.target.nodeName == "INPUT") {
-          // btnAccept = document.querySelector('.btn-accept').disabled = true
           btnAccept = document.querySelectorAll(".btn-accept");
           for (let i = 0; i < btnAccept.length; i++) {
             btnAccept[i].disabled = true;
           }
-          // Get the button that opens the modal
-          // var btn = document.getElementById("myBtn");
-          // console.log('nope')
+
           question_id = parseInt(localStorage.getItem("id"));
           ans_id = parseInt(e.target.attributes.getNamedItem("id").value);
           url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${question_id}/answers/${ans_id}`;
           var modal = document.getElementById("myModal");
-          // get the span element that closes the modal
           var span = document.getElementsByClassName("close")[0];
           modal.style.display = "block";
 

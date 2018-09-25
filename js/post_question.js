@@ -28,7 +28,6 @@ function createQuestion(e) {
   e.preventDefault();
   let title = document.getElementById("title").value;
   let body = document.getElementById("body").value;
-  // console.log(username, password);
   data = {
     title: title,
     body: body
@@ -45,7 +44,6 @@ function createQuestion(e) {
   })
     .then(res => res.json())
     .then(response => {
-      console.log(response);
       flash("Question created", "danger");
     })
     .catch(error => console.error("Error:", error));

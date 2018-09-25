@@ -49,9 +49,6 @@ fetch(url, {
       }
     }
     get_data(questions);
-    console.log(ids);
-    console.log(title);
-    console.log(body);
 
     urls = [];
     let html = "";
@@ -65,14 +62,11 @@ fetch(url, {
       urls.push(`https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`);
       url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`;
     }
-    console.log(urls);
 
     specific_question = document.getElementById("questions");
     specific_question.onclick = e => {
       e.preventDefault();
-      console.log(e.target);
       if (e.target && e.target.nodeName == "A") {
-        // console.log(e.target)
         id = parseInt(e.target.attributes.getNamedItem("id").value);
         qnid = e.target.attributes.getNamedItem("id").value;
         var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
@@ -94,7 +88,6 @@ fetch(url, {
             return res.json();
           })
           .then(data => {
-            console.log(data);
             window.location.href = "questions.html";
           });
       }

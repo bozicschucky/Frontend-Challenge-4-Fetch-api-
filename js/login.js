@@ -27,7 +27,6 @@ function loginuser(e) {
   e.preventDefault();
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
-  console.log(username, password);
   data = {
     username: username,
     password: password

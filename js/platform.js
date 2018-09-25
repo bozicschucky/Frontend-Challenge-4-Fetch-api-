@@ -35,7 +35,6 @@ fetch(url, {
   })
   .then(response => {
     flash("all questions", "danger");
-    console.log(response);
     questions = response.platform_questions;
 
     let ids = [];
@@ -52,7 +51,6 @@ fetch(url, {
       }
     }
     get_data(questions);
-    console.log(authors);
 
     urls = [];
     let html = "<h2>Recent Questions </h2>";
@@ -66,16 +64,12 @@ fetch(url, {
       urls.push(`https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`);
       url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${ids[i]}`;
     }
-    console.log(urls);
 
     specific_question = document.getElementById("questions");
     specific_question.onclick = e => {
       e.preventDefault();
-      console.log(e.target);
       if (e.target && e.target.nodeName == "A") {
-        // console.log(e.target)
         id = parseInt(e.target.attributes.getNamedItem("id").value);
-        // qnid = e.target.attributes.getNamedItem('id').value;
         var url = `https://stackoverflowlite2.herokuapp.com/api/v2/questions/${id}`;
         localStorage.setItem("id", id);
         window.location.href = "answers.html";

@@ -28,7 +28,6 @@ function registeruser(e) {
   e.preventDefault();
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
-  console.log(username, password);
   data = {
     username: username,
     password: password
@@ -45,7 +44,6 @@ function registeruser(e) {
     .then(res => res.json())
     .then(response => {
       message = response;
-      console.log(message["message"]);
       flash(message["message"], "danger");
     })
     .catch(error => console.error("Error:", error));

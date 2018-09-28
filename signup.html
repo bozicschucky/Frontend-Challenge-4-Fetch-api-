@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>signup</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="#">Minioverflow</a></li>
+        </ul>
+    </nav>
+    <main id="main_field">
+        <form method="post" class="main-form" id="signup-form">
+            <h1 class="form-head">Create Account</h1>
+            <label for="">Username</label>
+            <input type="text" name="username" id="username" placeholder="username" required>
+            <label for="">Password</label>
+            <input type="password" name="password" id="password" required minlength="6" maxlength="20">
+            <p>Already have an account?<a href="home.html"> Login</a></p>
+            <input class="btn" type="submit" value="signup">
+        </form>
+    </main>
+    <script src="js/signup.js"></script>
+</body>
+
+</html>
